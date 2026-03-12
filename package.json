@@ -9,9 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sanity/client": "^7.17.0",
+    "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^5.14.1",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
+    "next-sanity": "^12.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sanity": "^5.14.1",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
