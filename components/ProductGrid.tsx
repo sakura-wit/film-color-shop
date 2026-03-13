@@ -1,19 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from "@/lib/sanity";
 import ProductCard from "./ProductCard"; // Thêm dòng này
-
-async function getData(categorySlug?: string) {
-  // Nếu có truyền categorySlug, ta lọc sản phẩm theo danh mục đó
-  // Nếu không truyền, ta lấy tất cả sản phẩm (cho mục New Products)
-  const query = categorySlug
-    ? `*[_type == "product" && category->slug.current == "${categorySlug}"] | order(_createdAt desc) {
-        _id, name, image, price, description, code, cameraSystem, gallery
-      }`
-    : `*[_type == "product"] | order(_createdAt desc) [0...6]`; // Lấy 6 cái mới nhất
-
-  const data = await client.fetch(query);
-  return data;
-}
+import { getProducts } from "@/lib/api";
 
 interface Props {
   title: string;
@@ -21,11 +9,11 @@ interface Props {
 }
 
 export default async function ProductGrid({ title, categorySlug }: Props) {
-  const products = await getData(categorySlug);
+  const products = await getProducts(categorySlug);
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-5 border-t border-gray-50">
-      <h2 className="text-2xl md:text-3xl font-serif text-center mb-10 tracking-widest uppercase italic">
+      <h2 className="text-2xl font-bold md:text-3xl font-serif text-center mb-10 tracking-widest uppercase italic">
         {title}
       </h2>
 

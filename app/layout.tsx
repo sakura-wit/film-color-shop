@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google"; // Import font mới
+import { Cormorant_Garamond, Inter } from "next/font/google"; // Import font mới
 import "./globals.css";
 
 // Cấu hình Font chữ có chân cho tiêu đề/nghệ thuật
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
 // Cấu hình Font chữ không chân cho nội dung dễ đọc
@@ -27,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Thêm cả 2 class font vào body */}
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+      <body
+        className={`${cormorant.variable} ${cormorant.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

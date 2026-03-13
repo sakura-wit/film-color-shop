@@ -37,7 +37,7 @@ export default function ProductCard({ product }: { product: any }) {
             />
           )}
         </div>
-        <h3 className="text-[13px] font-semibold uppercase text-center mt-2">
+        <h3 className="text-[18px] font-semibold uppercase text-center mt-2">
           {product.name}
         </h3>
         <p className="text-[13px] font-bold mt-1 mb-4">

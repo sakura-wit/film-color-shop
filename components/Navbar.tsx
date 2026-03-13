@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Menu, X, ShoppingBag, Trash2 } from "lucide-react";
 import { useCartStore } from "@/store/useCartStore";
 import { urlFor } from "@/lib/sanity";
+import logo from "../public/Logofilm.png";
 
 const navLinks = [
   { name: "GIỚI THIỆU", href: "#" },
@@ -35,7 +36,7 @@ export default function Navbar() {
   // HÀM XỬ LÝ THANH TOÁN QUA ZALO
   const handleCheckout = () => {
     // 1. Số điện thoại Zalo của bạn (Bỏ số 0 ở đầu thay bằng 84 hoặc giữ nguyên số 0 tùy thiết lập Zalo, thường để 0 là ok)
-    const zaloNumber = "0901234567"; // THAY BẰNG SỐ CỦA BẠN
+    const zaloNumber = "0347085797"; // THAY BẰNG SỐ CỦA BẠN
 
     // 2. Soạn nội dung tin nhắn tự động
     let message = `Chào MNFILM, tôi muốn đặt đơn hàng sau:\n\n`;
@@ -59,7 +60,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white/90 backdrop-blur-md border-b sticky top-0 z-40 transition-all">
+      <nav className="bg-white/90 backdrop-blur-md sticky top-0 z-40 transition-all">
         {/* Bố cục 3 cột (Left - Center - Right) */}
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* CỘT TRÁI: Nút Menu (Mobile) / Logo (Desktop) */}
@@ -74,12 +75,7 @@ export default function Navbar() {
 
             {/* Logo chỉ hiện trên Desktop ở cột trái */}
             <Link href="/" className="hidden md:flex flex-col items-start">
-              <span className="text-2xl md:text-3xl font-serif font-light tracking-tighter">
-                MN<span className="italic">FILM</span>
-              </span>
-              <span className="text-[8px] tracking-[0.3em] uppercase">
-                Est. 2019
-              </span>
+              <Image className="max-w-32 max-h-20" src={logo} alt={""}></Image>
             </Link>
           </div>
 
@@ -87,12 +83,7 @@ export default function Navbar() {
           <div className="flex-[2] flex justify-center items-center">
             {/* Logo trên Mobile được dời ra giữa */}
             <Link href="/" className="md:hidden flex flex-col items-center">
-              <span className="text-2xl font-serif font-light tracking-tighter">
-                MN<span className="italic">FILM</span>
-              </span>
-              <span className="text-[8px] tracking-[0.3em] uppercase">
-                Est. 2019
-              </span>
+              <Image className="max-w-32 max-h-20" src={logo} alt={""}></Image>
             </Link>
 
             {/* Menu chữ trên Desktop */}

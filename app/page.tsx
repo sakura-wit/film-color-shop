@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -27,12 +28,13 @@ export default function Home() {
       {/* Gọi Section Form & FAQ ở đây */}
       <ContactSection />
 
-      {/* Thêm một Footer đơn giản cuối trang */}
+      <Footer></Footer>
+      {/* Thêm một Footer đơn giản cuối trang      
       <footer className="py-20 text-center border-t border-gray-100 mt-20">
         <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase">
           © 2024 TTFILM STORE. All rights reserved.
         </p>
-      </footer>
+      </footer> */}
     </main>
   );
 }

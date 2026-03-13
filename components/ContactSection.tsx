@@ -41,7 +41,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+    <section className="max-w-7xl mx-auto px-6 py-12 md:py-20">
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 justify-between">
         {/* CỘT TRÁI: FORM ĐĂNG KÝ (Được bọc trong khối nền kem) */}
         <div className="w-full lg:w-[45%] bg-[#F9F9F8] p-8 md:p-12 lg:p-14 shadow-sm">
